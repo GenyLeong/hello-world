@@ -19,7 +19,6 @@
 </template>
 
 <script>
-/* eslint-disable */
 import * as d3 from "d3";
 
 export default {
@@ -27,7 +26,7 @@ export default {
   props: ["tweetData"],
   data() {
     return {
-      msg: "Chart component D3",
+      msg: "👋 from the Chart Component",
       height: 600,
       width: 600
     };
@@ -62,6 +61,7 @@ export default {
         .nest()
         .key(d => d.user)
         .entries(this.tweetData);
+
       const packableTweets = { id: "All Tweets", values: nestedTweets };
       return d3
         .hierarchy(packableTweets, d => d.values)
